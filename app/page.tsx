@@ -9,7 +9,7 @@ import { VisionSection, MissionSection, AboutUsSection } from "@/components/visi
 import { InquiryForm } from "@/components/inquiry-form"
 import { WarningSection } from "@/components/warning-section"
 import { EmploymentSection } from "@/components/employment-section"
-import { FileText } from "lucide-react"
+import { FileText, Users, Building, Heart, TrendingUp } from "lucide-react"
 
 function useIsMobile() {
   const [isMobile, setIsMobile] = useState(false)
@@ -29,12 +29,10 @@ function useIsMobile() {
   return isMobile
 }
 
-// Hero Section Component with Video Animation
-function HeroSection() {
-  const [animationPhase, setAnimationPhase] = useState(0) // 0: video, 1: logo animation, 2: content
+function PremiumHeroSection() {
+  const [animationPhase, setAnimationPhase] = useState(0)
   const [showContent, setShowContent] = useState(false)
   const videoRef = useRef<HTMLVideoElement>(null)
-  const logoRef = useRef<HTMLDivElement>(null)
   const isMobile = useIsMobile()
 
   useEffect(() => {
@@ -52,13 +50,13 @@ function HeroSection() {
   }
 
   return (
-    <section className="relative h-screen bg-gradient-to-b from-background to-muted overflow-hidden">
-      {/* Video Animation */}
+    <section className="relative h-screen overflow-hidden hero-gradient">
+      {/* Cinematic Video Background */}
       {animationPhase === 0 && (
-        <div className="absolute inset-0 flex items-center justify-center bg-black">
+        <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
           <video
             ref={videoRef}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover opacity-80"
             autoPlay
             muted
             playsInline
@@ -69,67 +67,95 @@ function HeroSection() {
               type="video/mp4"
             />
           </video>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
         </div>
       )}
 
-      {/* Logo Animation */}
+      {/* 3D Logo Animation */}
       {animationPhase >= 1 && (
-        <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-b from-slate-900 to-slate-800">
+        <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary/20 via-secondary/20 to-background">
           <div
-            ref={logoRef}
-            className={`transform transition-all duration-2000 ease-out ${
-              animationPhase >= 1 ? "translate-z-0 scale-100 opacity-100" : "translate-z-[-100px] scale-50 opacity-0"
+            className={`transform transition-all duration-2000 ease-out floating ${
+              animationPhase >= 1 ? "scale-100 opacity-100" : "scale-50 opacity-0"
             }`}
-            style={{
-              transform: animationPhase >= 1 ? "translateZ(0) scale(1)" : "translateZ(-100px) scale(0.5)",
-              animation: animationPhase >= 1 ? "logoEmerge 2s ease-out forwards" : "none",
-            }}
           >
-            <img
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-pYTRYhbQSLFBFjd47Ala9PcKvvLDEs.png"
-              alt="Mokshamaa Infrastructure Limited"
-              className={`${isMobile ? "h-32 w-auto" : "h-48 w-auto"} drop-shadow-2xl`}
-            />
+            <div className="relative">
+              <img
+                src="/sewas-logo.png"
+                alt="800 SEWAS City - THE JAINISM OF UNIVERSE"
+                className={`${isMobile ? "h-40 w-auto" : "h-56 w-auto"} drop-shadow-2xl`}
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-lg blur-xl -z-10" />
+            </div>
           </div>
         </div>
       )}
 
-      {/* Content Overlay */}
+      {/* Premium Content Overlay with Glassmorphism */}
       {showContent && (
-        <div className="absolute inset-0 flex flex-col items-center justify-end pb-12 md:pb-20 bg-gradient-to-t from-background/90 to-transparent">
-          <div className="text-center space-y-4 md:space-y-6 animate-fade-in-up px-4">
-            <div className="space-y-3">
-              <h1 className="font-serif text-4xl sm:text-5xl md:text-7xl font-bold text-foreground text-balance">
-                MOKSHAMAA CITY 800
-              </h1>
-              <p className="text-xl md:text-2xl text-orange-600 font-semibold text-pretty">THE JAINISM OF UNIVERSE</p>
-              <p className="text-lg md:text-xl text-muted-foreground text-pretty font-medium">सूर्य-पृथ्वी-हवा-पानी-आकाश</p>
-              <p className="text-sm md:text-base text-muted-foreground text-pretty">Sun-Earth-Water-Air-Sky</p>
-              <div className="bg-orange-50 border border-orange-200 rounded-lg p-4 mt-4">
-                <p className="text-orange-800 font-semibold text-sm md:text-base">
-                  800 Cities • 29 States • 7 Union Territories
+        <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-t from-background/95 via-background/50 to-transparent">
+          <div className="text-center space-y-6 animate-fade-in-up px-4 max-w-4xl">
+            {/* Glassmorphism Card */}
+            <div className="glass-card rounded-2xl p-8 space-y-6">
+              <div className="space-y-4">
+                <h1 className="font-black text-5xl sm:text-6xl md:text-8xl gradient-text text-balance">
+                  800 SEWAS City
+                </h1>
+                <p className="text-2xl md:text-3xl font-bold text-primary">THE JAINISM OF UNIVERSE</p>
+                <p className="text-xl md:text-2xl text-secondary font-semibold">सूर्य-पृथ्वी-हवा-पानी-आकाश</p>
+                <p className="text-lg md:text-xl text-muted-foreground">Sun-Earth-Water-Air-Sky</p>
+              </div>
+
+              {/* Premium Stats Cards */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
+                <div className="glass-card rounded-xl p-4 premium-hover">
+                  <div className="text-3xl font-bold text-primary">800</div>
+                  <div className="text-sm text-muted-foreground">Cities</div>
+                </div>
+                <div className="glass-card rounded-xl p-4 premium-hover">
+                  <div className="text-3xl font-bold text-secondary">29</div>
+                  <div className="text-sm text-muted-foreground">States</div>
+                </div>
+                <div className="glass-card rounded-xl p-4 premium-hover">
+                  <div className="text-3xl font-bold text-accent">7</div>
+                  <div className="text-sm text-muted-foreground">Union Territories</div>
+                </div>
+              </div>
+
+              <div className="glass-card rounded-xl p-4 mt-4">
+                <p className="text-primary font-semibold text-sm md:text-base">
+                  Project by: 800 SEWAS INFRASTRUCTURE PRIVATE LIMITED
                 </p>
-                <p className="text-orange-700 text-xs md:text-sm mt-1">
-                  Project by: MOKSHAMAA INFRASTRUCTURE PRIVATE LIMITED
-                </p>
-                <p className="text-orange-600 text-xs md:text-sm">CMD: MR. ASHWIN R. SHAH</p>
+                <p className="text-secondary text-xs md:text-sm mt-1">CMD: MR. ASHWIN R. SHAH</p>
               </div>
             </div>
 
-            {/* Navigation Tabs */}
-            <div className="grid grid-cols-2 md:flex md:flex-wrap justify-center gap-2 md:gap-4 mt-6 md:mt-8 max-w-sm md:max-w-none mx-auto">
-              {["Home", "Vision", "Mission", "About Us"].map((tab) => (
+            {/* Interactive Navigation */}
+            <div className="flex flex-wrap justify-center gap-4 mt-8">
+              {[
+                { name: "Home", icon: Building, target: "home" },
+                { name: "Vision", icon: TrendingUp, target: "vision" },
+                { name: "Mission", icon: Heart, target: "mission" },
+                { name: "About Us", icon: Users, target: "about-us" },
+              ].map(({ name, icon: Icon, target }) => (
                 <Button
-                  key={tab}
-                  variant={tab === "Home" ? "default" : "outline"}
-                  size={isMobile ? "default" : "lg"}
-                  className="min-w-20 md:min-w-24 text-sm md:text-base"
+                  key={name}
+                  size="lg"
+                  className="
+                    relative overflow-hidden transition-all duration-300 ease-out
+                    bg-gradient-to-r from-amber-500 to-orange-600 text-white border-0 shadow-lg 
+                    hover:from-amber-600 hover:to-orange-700 hover:shadow-xl
+                    transform hover:scale-105 hover:-translate-y-1
+                  "
                   onClick={() => {
-                    const element = document.getElementById(tab.toLowerCase().replace(" ", "-"))
-                    element?.scrollIntoView({ behavior: "smooth" })
+                    const element = document.getElementById(target)
+                    if (element) {
+                      element.scrollIntoView({ behavior: "smooth" })
+                    }
                   }}
                 >
-                  {tab}
+                  <Icon className="h-5 w-5 mr-2" />
+                  {name}
                 </Button>
               ))}
             </div>
@@ -137,49 +163,94 @@ function HeroSection() {
         </div>
       )}
 
-      {/* Company Logo in Corner (only show after animation) */}
+      {/* Floating Elements */}
       {showContent && (
-        <div className="absolute top-4 left-4 md:top-8 md:left-8">
-          <img
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-pYTRYhbQSLFBFjd47Ala9PcKvvLDEs.png"
-            alt="Mokshamaa Infrastructure Limited"
-            className="h-12 md:h-16 w-auto"
-            loading="eager"
-          />
-        </div>
+        <>
+          <div className="absolute top-20 left-10 floating opacity-20">
+            <div className="w-16 h-16 rounded-full bg-gradient-to-r from-primary to-secondary" />
+          </div>
+          <div className="absolute bottom-20 right-10 floating opacity-20" style={{ animationDelay: "1s" }}>
+            <div className="w-12 h-12 rounded-full bg-gradient-to-r from-secondary to-primary" />
+          </div>
+        </>
       )}
 
-      <style jsx>{`
-        @keyframes logoEmerge {
-          0% {
-            transform: translateZ(-100px) scale(0.5);
-            opacity: 0;
-          }
-          50% {
-            transform: translateZ(-50px) scale(0.75);
-            opacity: 0.7;
-          }
-          100% {
-            transform: translateZ(0) scale(1);
-            opacity: 1;
-          }
+      {/* Company Logo in Corner */}
+      {showContent && (
+        <div className="absolute top-4 left-4 md:top-8 md:left-8">
+          <img src="/sewas-logo.png" alt="800 SEWAS City" className="h-12 md:h-16 w-auto premium-shadow rounded-lg" />
+        </div>
+      )}
+    </section>
+  )
+}
+
+function StatisticsSection() {
+  const [counters, setCounters] = useState({ years: 0, families: 0, universities: 0 })
+  const [isVisible, setIsVisible] = useState(false)
+  const sectionRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !isVisible) {
+          setIsVisible(true)
+          // Animate counters
+          const duration = 2000
+          const steps = 60
+          const stepDuration = duration / steps
+
+          let step = 0
+          const timer = setInterval(() => {
+            step++
+            const progress = step / steps
+            setCounters({
+              years: Math.floor(6 * progress),
+              families: Math.floor(10000 * progress),
+              universities: Math.floor(180 * progress),
+            })
+
+            if (step >= steps) clearInterval(timer)
+          }, stepDuration)
         }
-        
-        @keyframes fade-in-up {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        
-        .animate-fade-in-up {
-          animation: fade-in-up 1s ease-out;
-        }
-      `}</style>
+      },
+      { threshold: 0.5 },
+    )
+
+    if (sectionRef.current) observer.observe(sectionRef.current)
+    return () => observer.disconnect()
+  }, [isVisible])
+
+  return (
+    <section ref={sectionRef} className="py-20 bg-gradient-to-r from-primary/5 to-secondary/5">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-black gradient-text mb-4">Our Achievements</h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            Building communities and creating opportunities across India
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="glass-card rounded-2xl p-8 text-center premium-hover counter-animation">
+            <div className="text-6xl font-black text-primary mb-4">{counters.years}+</div>
+            <div className="text-xl font-semibold text-foreground mb-2">Years</div>
+            <div className="text-muted-foreground">of Excellence</div>
+          </div>
+
+          <div className="glass-card rounded-2xl p-8 text-center premium-hover counter-animation">
+            <div className="text-6xl font-black text-secondary mb-4">{counters.families.toLocaleString()}+</div>
+            <div className="text-xl font-semibold text-foreground mb-2">Families</div>
+            <div className="text-muted-foreground">Served</div>
+          </div>
+
+          <div className="glass-card rounded-2xl p-8 text-center premium-hover counter-animation">
+            <div className="text-6xl font-black text-accent mb-4">{counters.universities}+</div>
+            <div className="text-xl font-semibold text-foreground mb-2">Universities</div>
+            <div className="text-muted-foreground">Partnerships</div>
+          </div>
+        </div>
+      </div>
     </section>
   )
 }
@@ -217,13 +288,15 @@ export default function HomePage() {
 
   return (
     <main className="min-h-screen">
-      <HeroSection />
+      <PremiumHeroSection />
+
+      <StatisticsSection />
 
       <section id="home" className="min-h-screen bg-background p-4 md:p-8">
-        <div className="max-w-7xl mx-auto space-y-8 md:space-y-12">
-          <div className="text-center space-y-3 md:space-y-4">
-            <h2 className="font-serif text-2xl md:text-3xl font-bold text-balance">Home - Service Categories</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-sm md:text-base text-pretty leading-relaxed">
+        <div className="max-w-7xl mx-auto space-y-12">
+          <div className="text-center space-y-6">
+            <h2 className="text-4xl md:text-5xl font-black gradient-text">Service Categories</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Select your location from 800 cities across 29 states and 7 union territories. Explore our comprehensive
               services across Religious, Residential, Commercial, Education, Medical, and Social categories.
             </p>
@@ -283,9 +356,17 @@ export default function HomePage() {
         </div>
       </section>
 
-      <VisionSection />
-      <MissionSection />
-      <AboutUsSection />
+      <section id="vision">
+        <VisionSection />
+      </section>
+
+      <section id="mission">
+        <MissionSection />
+      </section>
+
+      <section id="about-us">
+        <AboutUsSection />
+      </section>
     </main>
   )
 }

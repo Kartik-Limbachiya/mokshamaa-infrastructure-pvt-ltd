@@ -78,7 +78,7 @@ export function InquiryForm({ locationSelection, selectedCategory, onSubmit }: I
 
   // Load saved form data from localStorage
   useEffect(() => {
-    const saved = localStorage.getItem("mokshamaa-inquiry-form")
+    const saved = localStorage.getItem("sewas-inquiry-form")
     if (saved) {
       try {
         const parsedData = JSON.parse(saved)
@@ -93,7 +93,7 @@ export function InquiryForm({ locationSelection, selectedCategory, onSubmit }: I
   // Auto-save form data
   useEffect(() => {
     const timer = setTimeout(() => {
-      localStorage.setItem("mokshamaa-inquiry-form", JSON.stringify(formData))
+      localStorage.setItem("sewas-inquiry-form", JSON.stringify(formData))
     }, 1000)
 
     return () => clearTimeout(timer)
@@ -158,7 +158,7 @@ export function InquiryForm({ locationSelection, selectedCategory, onSubmit }: I
         throw new Error(result.error || "Failed to submit inquiry")
       }
 
-      localStorage.removeItem("mokshamaa-inquiry-form")
+      localStorage.removeItem("sewas-inquiry-form")
 
       setFormData(initialFormData)
       setCurrentStep(1)

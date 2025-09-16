@@ -188,7 +188,7 @@ function InteractiveMap({
       </div>
 
       <div className="absolute bottom-2 right-2 text-xs text-gray-500 bg-white/80 px-2 py-1 rounded border">
-        © Mokshamaa Infrastructure
+        © 800 SEWAS Infrastructure
       </div>
     </div>
   )
@@ -242,7 +242,7 @@ export function LocationFilter({ onSelectionChange }: LocationFilterProps) {
     if (navigator.share && isMobile) {
       try {
         await navigator.share({
-          title: "Mokshamaa Infrastructure - Location Selection",
+          title: "800 SEWAS Infrastructure - Location Selection",
           text: `Selected: ${selectedState}, ${selectedCity}`,
           url: url,
         })
@@ -267,7 +267,7 @@ export function LocationFilter({ onSelectionChange }: LocationFilterProps) {
         <html>
           <head><title>Location Selection</title></head>
           <body>
-            <h1>Mokshamaa Infrastructure - Location Selection</h1>
+            <h1>800 SEWAS Infrastructure - Location Selection</h1>
             <pre>${printContent}</pre>
           </body>
         </html>

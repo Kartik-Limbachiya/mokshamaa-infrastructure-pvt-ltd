@@ -101,11 +101,11 @@ export function MissionSection() {
           <Card className="max-w-5xl mx-auto border-blue-200 shadow-xl bg-white/80 backdrop-blur-sm">
             <CardContent className="p-12">
               <blockquote className="text-2xl md:text-3xl font-bold text-gray-800 leading-relaxed text-center mb-6">
-                "मोक्षमा इन्फ्रास्ट्रक्चर प्राइवेट लिमिटेड — पिछले 6 सालों से भारत के गाँव-गाँव में जैनों की जरूरियत को समझकर उनको पूरा करने
-                का प्रयत्न कर रही है।"
+                "800 SEWAS इन्फ्रास्ट्रक्चर प्राइवेट लिमिटेड — पिछले 6 सालों से भारत के गाँव-गाँव में जैनों की जरूरियत को समझकर उनको पूरा
+                करने का प्रयत्न कर रही है।"
               </blockquote>
               <p className="text-lg text-gray-600 text-center font-medium">
-                "Mokshamaa Infrastructure Private Limited has been striving for the past 6 years to understand and
+                "800 SEWAS Infrastructure Private Limited has been striving for the past 6 years to understand and
                 fulfill the needs of Jains in every village of India."
               </p>
             </CardContent>
@@ -188,7 +188,7 @@ export function AboutUsSection() {
               </Badge>
             </div>
             <h2 className="font-serif text-5xl md:text-6xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
-              Mokshamaa Infrastructure Limited
+              800 SEWAS Infrastructure Limited
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               Dedicated to serving the Jain community across India with comprehensive infrastructure solutions for over
@@ -204,7 +204,7 @@ export function AboutUsSection() {
                 <h3 className="font-serif text-3xl font-bold text-gray-800">Our Story</h3>
                 <div className="space-y-4 text-gray-600 leading-relaxed">
                   <p>
-                    Mokshamaa Infrastructure Limited was founded with a singular vision: to ensure that no Jain in the
+                    800 SEWAS Infrastructure Limited was founded with a singular vision: to ensure that no Jain in the
                     world lives without their own home and sustainable livelihood. For over six years, we have been
                     working tirelessly across India's villages and cities.
                   </p>
@@ -272,7 +272,7 @@ export function AboutUsSection() {
                 <div>
                   <h4 className="font-bold text-lg text-gray-800 mb-3">Registered Office</h4>
                   <p className="text-gray-600">
-                    Mokshamaa Infrastructure Limited
+                    800 SEWAS Infrastructure Limited
                     <br />
                     Serving Jain Communities
                     <br />

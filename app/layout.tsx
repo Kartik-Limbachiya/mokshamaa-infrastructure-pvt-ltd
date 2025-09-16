@@ -18,12 +18,12 @@ const sourceSans = Source_Sans_3({
 })
 
 export const metadata: Metadata = {
-  title: "MOKSHAMAA CITY 800 - Mokshamaa Infrastructure Limited",
+  title: "800 SEWAS City - THE JAINISM OF UNIVERSE",
   description:
     "800 Cities • 29 States • 7 Union Territories. THE JAINISM OF UNIVERSE - Complete housing solutions for Jain communities with 0% down payment and 100% bank loan.",
   generator: "v0.app",
   keywords: [
-    "Mokshamaa City 800",
+    "800 SEWAS City",
     "Jain Community Housing",
     "800 Cities India",
     "0% Down Payment",
@@ -31,9 +31,9 @@ export const metadata: Metadata = {
     "180 International University Tie-ups",
     "Swadeshi Products 50% Discount",
   ],
-  authors: [{ name: "Mokshamaa Infrastructure Limited" }],
+  authors: [{ name: "800 SEWAS Infrastructure Limited" }],
   openGraph: {
-    title: "MOKSHAMAA CITY 800 - THE JAINISM OF UNIVERSE",
+    title: "800 SEWAS City - THE JAINISM OF UNIVERSE",
     description: "800 Cities • 29 States • 7 Union Territories serving Jain communities with complete life facilities",
     type: "website",
   },

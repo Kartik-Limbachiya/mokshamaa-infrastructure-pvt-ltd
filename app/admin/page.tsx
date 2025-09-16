@@ -231,7 +231,7 @@ export default function AdminDashboard() {
               <h3 className="text-lg font-semibold mb-2">Error Loading Data</h3>
               <p className="text-muted-foreground mb-4">{error}</p>
               <Button onClick={fetchInquiries}>
-                <RefreshCw className="h-4 w-4 mr-2" />
+                <RefreshCw className={`h-4 w-4 mr-2 ${isLoading ? "animate-spin" : ""}`} />
                 Retry
               </Button>
             </CardContent>
@@ -248,7 +248,7 @@ export default function AdminDashboard() {
         <div className="flex items-center justify-between">
           <div>
             <h1 className="text-3xl font-serif font-bold">Admin Dashboard</h1>
-            <p className="text-muted-foreground">Mokshamaa Infrastructure - Service Inquiries</p>
+            <p className="text-muted-foreground">800 SEWAS Infrastructure - Service Inquiries</p>
           </div>
           <div className="flex gap-2">
             <Button variant="outline" onClick={fetchInquiries} disabled={isLoading}>

@@ -6,39 +6,40 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: oklch(1 0 0); /* #ffffff - Main background color */
-  --foreground: oklch(0.278 0 0); /* #374151 - Primary text color */
-  --card: oklch(0.985 0.02 85.87); /* #fefce8 - Card background */
-  --card-foreground: oklch(0.278 0 0); /* #374151 - Card text color */
-  --popover: oklch(1 0 0); /* #ffffff - Popover background */
-  --popover-foreground: oklch(0.278 0 0); /* #374151 - Popover text color */
-  --primary: oklch(0.646 0.222 41.116); /* #d97706 - Primary action color for buttons */
-  --primary-foreground: oklch(1 0 0); /* #ffffff - Text on primary actions */
-  --secondary: oklch(0.488 0.243 264.376); /* #6366f1 - Accent color for links and highlights */
-  --secondary-foreground: oklch(1 0 0); /* #ffffff - Text on secondary actions */
-  --muted: oklch(0.985 0.02 85.87); /* #fefce8 - Muted background for less emphasis */
-  --muted-foreground: oklch(0.278 0 0); /* #374151 - Text on muted backgrounds */
-  --accent: oklch(0.488 0.243 264.376); /* #6366f1 - Accent color for interactive elements */
-  --accent-foreground: oklch(1 0 0); /* #ffffff - Text on accent elements */
-  --destructive: oklch(0.577 0.245 27.325); /* #dc2626 - Color for error messages */
-  --destructive-foreground: oklch(1 0 0); /* #ffffff - Text on destructive actions */
-  --border: oklch(0.922 0 0); /* #e5e7eb - Border color for cards and containers */
-  --input: oklch(0.97 0 0); /* #f8fafc - Input field background */
-  --ring: oklch(0.646 0.222 41.116); /* #d97706 - Ring color for focus states */
-  --chart-1: oklch(0.646 0.222 41.116); /* #d97706 - Chart color */
-  --chart-2: oklch(0.488 0.243 264.376); /* #6366f1 - Chart color */
-  --chart-3: oklch(0.577 0.245 27.325); /* #dc2626 - Chart color */
-  --chart-4: oklch(0.769 0.188 70.08); /* #f59e0b - Chart color */
-  --chart-5: oklch(0.828 0.189 84.429); /* #6ee7b7 - Chart color */
-  --radius: 0.5rem; /* Corner rounding */
-  --sidebar: oklch(0.985 0.02 85.87); /* #fefce8 - Sidebar background */
-  --sidebar-foreground: oklch(0.278 0 0); /* #374151 - Sidebar text */
-  --sidebar-primary: oklch(0.646 0.222 41.116); /* #d97706 - Primary sidebar accent */
-  --sidebar-primary-foreground: oklch(1 0 0); /* #ffffff - Text on primary sidebar accent */
-  --sidebar-accent: oklch(0.488 0.243 264.376); /* #6366f1 - Sidebar accent color */
-  --sidebar-accent-foreground: oklch(1 0 0); /* #ffffff - Text on sidebar accent */
-  --sidebar-border: oklch(0.922 0 0); /* #e5e7eb - Sidebar border color */
-  --sidebar-ring: oklch(0.646 0.222 41.116); /* #d97706 - Sidebar focus ring color */
+  /* Updated color tokens to match premium design brief */
+  --background: #ffffff; /* Main background color */
+  --foreground: #1e1e2f; /* Primary text color */
+  --card: rgba(255, 255, 255, 0.9); /* Card background with glassmorphism */
+  --card-foreground: #1e1e2f; /* Card text color */
+  --popover: rgba(255, 255, 255, 0.8); /* Popover background */
+  --popover-foreground: #1e1e2f; /* Popover text color */
+  --primary: #ff7f30; /* Primary action color */
+  --primary-foreground: #ffffff; /* Text color for primary actions */
+  --secondary: #0d47a1; /* Secondary action color */
+  --secondary-foreground: #ffffff; /* Text color for secondary actions */
+  --muted: #f7f7f7; /* Muted background color */
+  --muted-foreground: #1e1e2f; /* Muted text color */
+  --accent: #0d47a1; /* Accent color for highlights */
+  --accent-foreground: #ffffff; /* Text color for accent elements */
+  --destructive: #ff3d00; /* Color for error messages */
+  --destructive-foreground: #ffffff; /* Text for error messages */
+  --border: #e0e0e0; /* Border color */
+  --input: #f7f7f7; /* Input field background */
+  --ring: rgba(255, 127, 48, 0.5); /* Ring color for focus states */
+  --chart-1: #ff7f30; /* Color for first chart element */
+  --chart-2: #0d47a1; /* Color for second chart element */
+  --chart-3: #1e1e2f; /* Color for third chart element */
+  --chart-4: #f7f7f7; /* Color for fourth chart element */
+  --chart-5: #ffffff; /* Color for fifth chart element */
+  --radius: 0.5rem; /* Corner rounding size */
+  --sidebar: #ffffff; /* Sidebar background */
+  --sidebar-foreground: #1e1e2f; /* Sidebar text color */
+  --sidebar-primary: #ff7f30; /* Primary sidebar color */
+  --sidebar-primary-foreground: #ffffff; /* Primary sidebar text color */
+  --sidebar-accent: #0d47a1; /* Sidebar accent color */
+  --sidebar-accent-foreground: #ffffff; /* Sidebar accent text color */
+  --sidebar-border: #e0e0e0; /* Sidebar border color */
+  --sidebar-ring: rgba(255, 127, 48, 0.5); /* Sidebar ring color */
 }
 
 .dark {
@@ -126,7 +127,110 @@
   }
 }
 
-/* Adding marquee animation for residential section Hindi text */
+/* Added premium animations and effects for landing page */
+/* Glassmorphism effect */
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+/* Premium gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #ff7f30 0%, #0d47a1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Animated counters */
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.counter-animation {
+  animation: countUp 0.8s ease-out forwards;
+}
+
+/* Premium hover effects */
+.premium-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.premium-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Parallax background */
+.parallax-bg {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Cinematic hero background */
+.hero-gradient {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 127, 48, 0.1) 0%,
+    rgba(13, 71, 161, 0.1) 50%,
+    rgba(30, 30, 47, 0.1) 100%
+  );
+}
+
+/* Interactive button effects */
+.interactive-btn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.interactive-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.interactive-btn:hover::before {
+  left: 100%;
+}
+
+/* Floating animation for elements */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.floating {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Premium card shadows */
+.premium-shadow {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+/* Marquee animation for residential section Hindi text */
 .marquee-container {
   overflow: hidden;
   white-space: nowrap;
@@ -145,4 +249,24 @@
   to {
     transform: translateX(-100%);
   }
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Loading animation */
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.loading-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
