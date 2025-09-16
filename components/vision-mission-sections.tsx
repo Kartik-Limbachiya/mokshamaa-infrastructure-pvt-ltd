@@ -101,8 +101,7 @@ export function MissionSection() {
           <Card className="max-w-5xl mx-auto border-blue-200 shadow-xl bg-white/80 backdrop-blur-sm">
             <CardContent className="p-12">
               <blockquote className="text-2xl md:text-3xl font-bold text-gray-800 leading-relaxed text-center mb-6">
-                "800 SEWAS इन्फ्रास्ट्रक्चर प्राइवेट लिमिटेड — पिछले 6 सालों से भारत के गाँव-गाँव में जैनों की जरूरियत को समझकर उनको पूरा
-                करने का प्रयत्न कर रही है।"
+                &quot;800 SEWAS इन्फ्रास्ट्रक्चर प्राइवेट लिमिटेड — पिछले 6 सालों से भारत के गाँव-गाँव में जैनों की ज़रूरियात को समझकर उनको पूरा करने का प्रयत्न कर रही है।&quot;
               </blockquote>
               <p className="text-lg text-gray-600 text-center font-medium">
                 "800 SEWAS Infrastructure Private Limited has been striving for the past 6 years to understand and

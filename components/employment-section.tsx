@@ -42,8 +42,7 @@ export function EmploymentSection() {
 
           <div className="bg-white rounded-lg shadow-lg p-6 max-w-4xl mx-auto border border-green-200">
             <p className="text-lg md:text-xl font-semibold text-green-700 leading-relaxed mb-4">
-              "800 SEWAS City में घर लेना है पर कोई नौरी धंधा नहीं है तो आप हमे अपनी Skills बताइये हम आपको Employment देने के प्रयत्न
-              में है"
+              &quot;800 SEWAS City में घर लेना है पर कोई नौकरी धंधा नहीं है तो आप हमे अपनी Skills बताइये हम आपको Employment देने के प्रयत्न में है&quot;
             </p>
             <p className="text-sm text-green-600 italic">
               "Want a home in 800 SEWAS City but don't have a job? Tell us your skills and we will try to provide you
